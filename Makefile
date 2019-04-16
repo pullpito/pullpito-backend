@@ -16,6 +16,9 @@ project-up:
 	docker-compose up -d
 project-down:
 	docker-compose down
+# Testing
+run-tests:
+	docker-compose run --rm api bundle exec rspec
 # Other
 log-monitor:
 	tail -f log/development.log
