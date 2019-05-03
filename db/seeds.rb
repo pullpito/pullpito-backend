@@ -8,5 +8,7 @@
 
 if Rails.env == "development"
     User.destroy_all
-    User.create!({ email: "test@example.com", password: "password" })
+    user = User.create!({ email: "test@example.com", password: "password" })
+    Profile.destroy_all
+    Profile.create!({ id: 1, first_name: "Lorem", last_name: "Ipsum", user: user })
 end

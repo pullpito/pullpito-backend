@@ -33,6 +33,12 @@ gem 'rack-cors'
 group :test do
   # Framework to analyze coverage.
   gem 'simplecov', require: false
+  # Use Faker to use on factory data
+  gem 'faker'
+  # Use FactoryGirl to make factory on tests
+  gem 'factory_bot_rails'
+  # Use to clean test database after use
+  gem 'database_cleaner'
 end
 
 group :development, :test do

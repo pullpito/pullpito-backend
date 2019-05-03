@@ -6,14 +6,22 @@ new-database:
 	docker-compose run --rm api rails db:create
 	docker-compose run --rm api rails db:migrate
 	docker-compose run --rm api rails db:seed
+# Build
+build-images:
+	docker-compose down
+	rm -f ./tmp/pids/server.pid
+	docker-compose build
 # Database management
-database-migration:
+db-migration:
 	docker-compose run --rm api rails db:migrate
-database-seed:
+db-seed:
+	docker-compose run --rm api rails db:seed
+db-update:
+	docker-compose run --rm api rails db:migrate
 	docker-compose run --rm api rails db:seed
 # Runtime management
 project-up:
-	docker-compose up -d
+	docker-compose up -d api
 project-down:
 	docker-compose down
 # Testing

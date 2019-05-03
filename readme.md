@@ -2,6 +2,11 @@
 
 Backend repository for Pullpito.
 
+## Build images
+```bash
+$ make build-images
+```
+
 ## Run
 ```bash
 $ make project-up
@@ -12,14 +17,19 @@ $ make project-up
 $ make project-down
 ```
 
+## Database update
+```bash
+$ make db-update
+```
+
 ## Run migrations
 ```bash
-$ make database-migration
+$ make db-migration
 ```
 
 ## Run seeds
 ```bash
-$ make database-seed
+$ make db-seed
 ```
 
 ## Test
