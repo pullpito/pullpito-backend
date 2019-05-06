@@ -24,6 +24,10 @@ project-up:
 	docker-compose up -d api
 project-down:
 	docker-compose down
+run-console:
+	docker-compose run --rm api bash
+run-rails-console:
+	docker-compose run --rm api rails c
 # Testing
 run-tests:
 	docker-compose run --rm api bundle exec rspec
