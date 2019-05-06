@@ -3,15 +3,15 @@ require 'rails_helper'
 RSpec.describe Profile, type: :model do
   let(:empty_profile) { Profile.create }
   let(:not_strip_values_profile) { Profile.create({ first_name: " ", last_name: " " }) }
-  let(:valid_profile) { Profile.create({ first_name: "Josue Luis", last_name: "Meza Peña" }) }
+  let(:valid_profile) { FactoryBot.create(:profile) }
 
   it "must be invalid with empty data" do
     expect(empty_profile).to be_invalid
   end
 
   it "must be invalid with empty required values" do
-    expect(empty_profile.errors[:first_name]).to include("can't be blank")
-    expect(empty_profile.errors[:last_name]).to include("can't be blank")
+    expect(empty_profile.errors[:first_name]).to include(cant_be_blank)
+    expect(empty_profile.errors[:last_name]).to include(cant_be_blank)
   end
 
   it "must be invalid after trip values" do

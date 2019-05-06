@@ -26,8 +26,10 @@ SimpleCov.start 'rails' do
 end
 
 require './spec/helpers/session_helper'
+require './spec/helpers/validation_helper'
 RSpec.configure do |c|
   c.include SessionHelper
+  c.include ValidationHelper
 end
 
 RSpec.configure do |config|

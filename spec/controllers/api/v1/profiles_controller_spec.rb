@@ -20,9 +20,9 @@ RSpec.describe Api::V1::ProfilesController, type: :request do
 
       it "should return correct values" do
         json = JSON.parse(response.body)
-        expect(json['id']).to eq(profile.id)
-        expect(json['first_name']).to eq(profile.first_name)
-        expect(json['last_name']).to eq(profile.last_name)
+        expect(json["id"]).to eq(profile.id)
+        expect(json["first_name"]).to eq(profile.first_name)
+        expect(json["last_name"]).to eq(profile.last_name)
       end
     end
 
@@ -34,7 +34,7 @@ RSpec.describe Api::V1::ProfilesController, type: :request do
       end
   
       it "should return an error message" do
-        expect(JSON.parse(response.body)['error']).to include("not found")
+        expect(JSON.parse(response.body)["error"]).to include(not_found)
       end
     end
   end
